@@ -11,9 +11,9 @@ INCLUDES := -I $(PATH_SRC) -I $(PATH_TEST) -I $(PATH_INCLUDES) -I $(PATH_UNITY)
 # Files
 SRCS_FILES := *.c
 SRCS := $(addprefix $(PATH_SRC), $(SRCS_FILES))
-TESTS_FILES := test_get_next_line.c
+TESTS_FILES := test_all.c test_get_next_line.c
 TESTS := $(addprefix $(PATH_TEST), $(TESTS_FILES))
-UNITY = $(PATH_UNITY)unity.c
+UNITY = $(PATH_UNITY)/unity.c
 EXECUTABLE := ./a.out
 
 # FLAGS

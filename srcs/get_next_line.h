@@ -6,7 +6,7 @@
 /*   By: msakurad <msakurad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:59:28 by msakurad          #+#    #+#             */
-/*   Updated: 2023/06/02 17:01:37 by msakurad         ###   ########.fr       */
+/*   Updated: 2023/06/03 23:40:37 by msakurad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
+# define BUFFER_SIZE_MAX 1024
+# define BUFFER_SIZE 5
 
 char	*get_next_line(int fd);
 

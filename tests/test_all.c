@@ -8,7 +8,8 @@ void	tearDown(void)
 {
 }
 
-int	main(int argc, char **argv)
+int	main(void)
 {
+	run_test_get_next_line();
 	return (0);
 }
