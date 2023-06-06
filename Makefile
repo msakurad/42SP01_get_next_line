@@ -23,6 +23,10 @@ all:
 	cc $(CC_FLAGS) $(SRCS) $(TESTS) $(UNITY) $(INCLUDES)
 	$(EXECUTABLE)
 
++%:
+	cc $(CC_FLAGS) -D BUFFER_SIZE=$@ $(SRCS) $(TESTS) $(UNITY) $(INCLUDES)
+	$(EXECUTABLE)
+
 clean:
 	rm $(EXECUTABLE)
 

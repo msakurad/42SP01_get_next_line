@@ -6,7 +6,7 @@ void	test_get_next_line_1_reading_file(void)
 	int		fd;
 	char	*str;
 
-	fd = open("texttoread.txt", O_RDONLY);
+	fd = open("alphabet1.txt", O_RDONLY);
 	if (fd == -1)
 	{
 		perror("Error opening the file");
@@ -17,6 +17,7 @@ void	test_get_next_line_1_reading_file(void)
 	}
 	printf("\n");
 	close(fd);
+	free(str);
 }
 
 void	run_test_get_next_line(void)
