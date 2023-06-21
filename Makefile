@@ -19,6 +19,7 @@ EXECUTABLE := ./a.out
 # FLAGS
 CC_FLAGS = -O2 -Wall -Wextra -Werror
 
+# cc -Wall -Wextra -Werror 
 all:
 	cc $(CC_FLAGS) $(SRCS) $(TESTS) $(UNITY) $(INCLUDES)
 	$(EXECUTABLE)

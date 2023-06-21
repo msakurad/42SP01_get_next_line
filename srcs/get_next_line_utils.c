@@ -6,7 +6,7 @@
 /*   By: msakurad <msakurad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:58:54 by msakurad          #+#    #+#             */
-/*   Updated: 2023/06/20 22:38:10 by msakurad         ###   ########.fr       */
+/*   Updated: 2023/06/21 15:28:45 by msakurad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	while (s2[j] && j < s2_len)
 	{
-		s_joined[i] = s2[j];
-		i++;
+		s_joined[i + j] = s2[j];
 		j++;
 	}
-	s_joined[i] = '\0';
+	s_joined[i + j] = '\0';
 	return (s_joined);
 }
 
@@ -85,6 +84,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub_s;
 	size_t	s_len;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
@@ -96,41 +96,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub_s = (char *)malloc(sizeof(char) * (len + 1));
 	if (sub_s == NULL)
 		return (NULL);
-	ft_strlcpy(sub_s, &s[start], len + 1);
+	i = 0;
+	while (s[start + i] && i < len)
+	{
+		sub_s[i] = s[start + i];
+		i++;
+	}
+	sub_s[i] = '\0';
 	return (sub_s);
 }
-
-// char	*next_str(int fd, int buf_size)
-// {
-// 	char	next_s[__INT_MAX__];
-// 	char	*next_chr;
-// 	int		count;
-// 	ssize_t	bytes_read;
-
-// 	count = 0;
-// 	next_chr = (char *)malloc(sizeof(char) * 2);
-// 	while (count < buf_size)
-// 	{
-// 		bytes_read = read(fd, next_chr, 1);
-// 		if (bytes_read < 0)
-// 		{
-// 			free(next_chr);
-// 			return (NULL);
-// 		}
-// 		if (next_s)
-// 	}
-// 	free(next_chr);
-// 	return (next_s);
-// }
-
-// // char	*str_oneline_atatime(int fd)
-// // {
-// // 	ssize_t	bytesRead;
-// // 	char		*strRead;
-
-// // 	strRead = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-// // 	bytesRead = read(fd, strRead, BUFFER_SIZE);
-// // 	if (bytesRead <= 0)
-// // 		return (NULL);
-// // }
-// // int	count_chrofline(int fd)
