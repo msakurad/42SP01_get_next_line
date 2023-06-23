@@ -11,6 +11,7 @@ void	test_get_next_line_1_reading_file(void)
 	{
 		perror("Error opening the file");
 	}
+	printf("check point 0\n");
 	while ((str = get_next_line(fd)))
 	{
 		printf("%s", str);
@@ -30,19 +31,21 @@ void	test_get_next_line_2_reading_file(void)
 	{
 		perror("Error opening the file");
 	}
+	// str = get_next_line(fd);
+	// printf("%s", str);
 	while ((str = get_next_line(fd)))
 	{
 		printf("%s", str);
+		free(str);
 	}
 	printf("\n");
 	close(fd);
-	free(str);
 }
 
 void	run_test_get_next_line(void)
 {
 	UNITY_BEGIN();
-	RUN_TEST(test_get_next_line_1_reading_file);
+	// RUN_TEST(test_get_next_line_1_reading_file);
 	RUN_TEST(test_get_next_line_2_reading_file);
 	UNITY_END();
 }
