@@ -8,8 +8,20 @@ void	tearDown(void)
 {
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	run_test_get_next_line();
+	if (argc < 1)
+		return (1);
+	printf("argv1 %s\n", argv[1]);
+	if (!strcmp(argv[1], "bonus"))
+	{
+		printf("check-point 1\n");
+		run_test_get_next_line_bonus();
+	}
+	else
+	{
+		printf("check-point 2\n");
+		run_test_get_next_line();
+	}
 	return (0);
 }

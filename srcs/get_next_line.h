@@ -6,7 +6,7 @@
 /*   By: msakurad <msakurad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:59:28 by msakurad          #+#    #+#             */
-/*   Updated: 2023/07/02 22:36:02 by msakurad         ###   ########.fr       */
+/*   Updated: 2023/07/04 01:55:46 by msakurad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-
-# define BUFFER_SIZE_MAX 1024
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1

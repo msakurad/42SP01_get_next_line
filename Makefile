@@ -13,7 +13,7 @@ SRCS_FILES := get_next_line.c get_next_line_utils.c
 SRCS := $(addprefix $(PATH_SRC), $(SRCS_FILES))
 SRCS_FILES_BONUS := get_next_line_bonus.c get_next_line_utils_bonus.c
 SRCS_BONUS := $(addprefix $(PATH_SRC), $(SRCS_FILES_BONUS))
-TESTS_FILES := test_all.c test_get_next_line.c
+TESTS_FILES := test_all.c test_get_next_line.c test_get_next_line_bonus.c
 TESTS := $(addprefix $(PATH_TEST), $(TESTS_FILES))
 UNITY = $(PATH_UNITY)/unity.c
 EXECUTABLE := ./a.out
@@ -24,15 +24,15 @@ CC_FLAGS = -O2 -Wall -Wextra -Werror
 # cc -Wall -Wextra -Werror 
 all:
 	cc $(CC_FLAGS) $(SRCS) $(TESTS) $(UNITY) $(INCLUDES_MANDAT)
-	$(EXECUTABLE)
+	$(EXECUTABLE) $@
 
 +%:
 	cc $(CC_FLAGS) -D BUFFER_SIZE=$@ $(SRCS) $(TESTS) $(UNITY) $(PATH_SRC)get_next_line.h $(INCLUDES_MANDAT)
-	$(EXECUTABLE)
+	$(EXECUTABLE) $@
 
-bonuss:
-	cc $(CC_FLAGS) $(SRCS_BONUS) $(TESTS) $(UNITY) $(INCLUDES_BONUS)
-	$(EXECUTABLE)
+bonus:
+	cc $(CC_FLAGS) -D BUFFER_SIZE=15 $(SRCS_BONUS) $(TESTS) $(UNITY) $(PATH_SRC)get_next_line_bonus.h $(INCLUDES_BONUS)
+	$(EXECUTABLE) $@
 
 clean:
 	rm $(EXECUTABLE)

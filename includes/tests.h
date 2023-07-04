@@ -11,8 +11,7 @@
 # include <string.h>
 # include <limits.h>
 
-# include "get_next_line.h"
-
 void	run_test_get_next_line(void);
+void	run_test_get_next_line_bonus(void);
 
 #endif
