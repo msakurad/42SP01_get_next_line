@@ -6,26 +6,27 @@
 /*   By: msakurad <msakurad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:58:11 by msakurad          #+#    #+#             */
-/*   Updated: 2023/07/05 00:12:14 by msakurad         ###   ########.fr       */
+/*   Updated: 2023/07/05 01:57:11 by msakurad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static void	storage_to_current_line(char **s1, char *s2)
+static void	storage_to_current_line(char **line, char *buf)
 {
 	char	*tmp;
 
-	if (!s1 && !s2)
+	if (!line && !buf)
 		tmp = ft_strdup("");
-	else if (*s1 && !s2)
-		tmp = ft_strdup(*s1);
-	else if (!*s1 && s2)
-		tmp = ft_strdup(s2);
+	else if (*line && !buf)
+		tmp = ft_strdup(*line);
+	else if (!*line && buf)
+		tmp = ft_strdup(buf);
 	else
-		tmp = ft_strjoin(*s1, s2);
-	free(*s1);
-	*s1 = tmp;
+		tmp = ft_strjoin(*line, buf);
+	free(*line);
+	*line = ft_strdup(tmp);
+	free(tmp);
 }
 
 static int	scan_and_check_new_line(int fd, char **line)
@@ -64,7 +65,8 @@ static char	*split_to_next_and_bckup(char **line)
 		next_line = ft_substr(*line, 0, pos_new_line - *line + 1);
 		tmp = ft_strdup(pos_new_line + 1);
 		free(*line);
-		*line = tmp;
+		*line = ft_strdup(tmp);
+		free(tmp);
 	}
 	else
 		next_line = ft_strdup(*line);
