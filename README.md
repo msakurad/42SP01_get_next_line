@@ -7,7 +7,7 @@ read from a file descriptor.
 
 ## Notes
 
-### Final Grade: <span style="color: green;">112/100</span>
+### Final Grade: \033[32m112/100\033[0m
 Mandatory + Bonus (it passed the 3 evaluations I did with the Cadets but Moulinette couldn't compile it)
 
 ### Directories
