@@ -7,8 +7,8 @@ read from a file descriptor.
 
 ## Notes
 
-### Final Grade: 112/100
-Mandatory + Bonus (it passed in the 3 evaluations I did with the Cadets but Moulinette couldn't compile it)
+### Final Grade: <span style="color: green;">112/100</span>
+Mandatory + Bonus (it passed the 3 evaluations I did with the Cadets but Moulinette couldn't compile it)
 
 ### Directories
 -- includes
